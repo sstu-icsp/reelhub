@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  rank: 1
+  view_count: 1
+  video_size: 1.5
+  video_dimensions: MyString
+  thumbnail_path: MyString
+
+two:
+  title: MyString
+  description: MyText
+  rank: 1
+  view_count: 1
+  video_size: 1.5
+  video_dimensions: MyString
+  thumbnail_path: MyString

@@ -1,9 +1,16 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
+  resources :videos
+  resources :feeds
+
+  get '/about' => 'pages#about'
+  get '/support' => 'pages#support'
+  get '*path' => redirect('/404.html')
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'pages#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

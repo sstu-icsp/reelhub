@@ -1,0 +1,10 @@
+<h1> Feeds#index </h1>
+
+<%= link_to 'New Post', new_feed_path %>
+
+<% @feed.each do |each| %>
+	<p> <%= each.title %> </p>
+	<p> <%= each.body %> </p>
+
+	<br>
+<% end %>
