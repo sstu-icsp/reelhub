@@ -1,10 +1,14 @@
 Rails.application.routes.draw do  
+  devise_for :users
+  get 'persons/profile'
+
   resources :videos
   resources :feeds
-
+  resources :users
   get '/about' => 'pages#about'
   get '/support' => 'pages#support'
   get '*path' => redirect('/404.html')
+  get 'persons/profile', as: 'user_root'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
