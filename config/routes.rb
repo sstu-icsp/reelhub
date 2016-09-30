@@ -1,12 +1,12 @@
 Rails.application.routes.draw do  
   devise_for :users
-  get 'persons/profile'
-
   resources :videos
   resources :feeds
-  resources :users
+  devise_scope :user do get '/users/sign_out' => 'devise/sessions#destroy' end
+  get 'persons/profile'
   get '/about' => 'pages#about'
   get '/support' => 'pages#support'
+  get '/home' => 'pages#home'
   get '*path' => redirect('/404.html')
   get 'persons/profile', as: 'user_root'
 
