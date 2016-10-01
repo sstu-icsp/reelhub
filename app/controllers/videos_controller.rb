@@ -28,17 +28,17 @@ class VideosController < ApplicationController
     #
   end
 
-  def destroy 
-  	@video.destroy
-    redirect_to :action => :index, status: 303
-  end
-
   def update
   	if @video.update(video_params)
       redirect_to @video
     else
       render 'edit'
     end
+  end
+
+  def destroy 
+    @video.destroy
+    redirect_to :action => :index, status: 303
   end
 
   private 

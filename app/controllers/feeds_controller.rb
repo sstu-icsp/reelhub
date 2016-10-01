@@ -28,17 +28,17 @@ class FeedsController < ApplicationController
     #
   end
 
-  def destroy 
-  	@feed.destroy
-    redirect_to :action => :index, status: 303
-  end
-
   def update
   	if @feed.update(feed_params)
       redirect_to @feed
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @feed.destroy
+    redirect_to :action => :index, status: 303
   end
 
   private 
