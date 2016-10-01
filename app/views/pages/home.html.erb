@@ -1,9 +1,10 @@
 <h1> Home Page </h1>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+
 <% if user_signed_in? %>
-    <span>Здравствуйте, <%= current_user.email %></span>
-    <%= link_to 'Выйти', destroy_user_session_path %>
+	<p>
+		Hello, <%= current_user.email %>
+	</p>
+    <%= link_to 'Sign Out', destroy_user_session_path %>
 <% else %>
-    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+    <%= link_to 'Log In', new_user_session_path %> Don't have an account yet? <%= link_to 'Sign Up', new_user_registration_path %>
 <% end %>

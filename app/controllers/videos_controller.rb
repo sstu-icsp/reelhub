@@ -1,6 +1,9 @@
 class VideosController < ApplicationController
+  before_action :find_video, only: [:show, :edit, :destroy, :update]
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
-  	@video = Video.all.order('updated_at DESC')
+  	@video = Video.all.order('created_at DESC')
   end
 
   def new 
@@ -8,7 +11,7 @@ class VideosController < ApplicationController
   end
 
   def create
-  	@video = Video.new(feed_params)
+  	@video = Video.new(video_params)
 
   	if @video.save 
   		redirect_to @video
@@ -18,28 +21,33 @@ class VideosController < ApplicationController
   end
 
   def show
-  	@video = Video.find(params[:id])
-  end
-
-  def destroy 
-  	#
+    #
   end
 
   def edit
-  	#
+    #
+  end
+
+  def destroy 
+  	@video.destroy
+    redirect_to :action => :index, status: 303
   end
 
   def update
-  	#
+  	if @video.update(video_params)
+      redirect_to @video
+    else
+      render 'edit'
+    end
   end
 
   private 
 
-  def feed_params
+  def video_params
   	params.require(:video).permit(:title, :description, :rank, :view_count, :view_size, :view_dimensions, :thumbnail_path)
   end
 
-  def find_videos
+  def find_video
   	@video = Video.find(params[:id])
   end
 end

@@ -1,20 +1,22 @@
 Rails.application.routes.draw do  
-  devise_for :users
+
+  # General:
   resources :videos
   resources :feeds
-  devise_scope :user do get '/users/sign_out' => 'devise/sessions#destroy' end
-  get 'persons/profile'
+
+  # Custom:
+  root 'pages#home'
+  get '/home' => 'pages#home'
   get '/about' => 'pages#about'
   get '/support' => 'pages#support'
-  get '/home' => 'pages#home'
-  get '*path' => redirect('/404.html')
-  get 'persons/profile', as: 'user_root'
+  # get '*path' => redirect('/') # Messes up Devise's redirection to Log In / Sign Up
+
+  # Devise:
+  devise_for :users
+  devise_scope :user do get '/users/sign_out' => 'devise/sessions#destroy' end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'pages#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

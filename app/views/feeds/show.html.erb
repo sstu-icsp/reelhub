@@ -1,4 +1,8 @@
 <h1> Show Feed </h1>
+
+<%= link_to 'Edit Feed', edit_feed_path %>
+<%= link_to 'Delete Feed', feed_path, method: :delete, data: { confirm: 'Are you sure? This will permanently delete this feed!' } %>
+
 <p>
 	<%= @feed.title %>
 	<br>

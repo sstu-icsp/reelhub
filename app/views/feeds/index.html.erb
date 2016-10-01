@@ -2,9 +2,10 @@
 
 <%= link_to 'New Post', new_feed_path %>
 
-<% @feed.each do |each| %>
-	<p> <%= each.title %> </p>
-	<p> <%= each.body %> </p>
-
-	<br>
+<% @feed.each do |feed| %>
+	<%= link_to feed do %>
+		<p> <%= feed.title %> </p>
+		<p> <%= feed.body %> </p>
+		<br>
+	<% end %>
 <% end %>

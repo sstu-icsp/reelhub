@@ -1,0 +1,16 @@
+<%= form_for @video do |v| %>
+	<%= v.label :title %>
+	<br>
+	<%= v.text_field :title %>
+	<br>
+	<%= v.label :description %>
+	<br>
+	<%= v.text_field :description %>
+	<br>
+	<%= v.label :rank %>
+	<br>
+	<%= v.text_field :rank %>
+	<br>
+	
+	<%= v.submit %>
+<% end %>

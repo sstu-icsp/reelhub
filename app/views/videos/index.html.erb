@@ -2,9 +2,11 @@
 
 <%= link_to 'New Video', new_video_path %>
 
-<% @video.each do |each| %>
-	<p> <%= each.title %> </p>
-	<p> <%= each.description %> </p>
-	<p> <%= each.rank %> </p>
-	<br>
+<% @video.each do |video| %>
+	<%= link_to video do %>
+		<p> <%= video.title %> </p>
+		<p> <%= video.description %> </p>
+		<p> <%= video.rank %> </p>
+		<br>
+	<% end %>
 <% end %>
