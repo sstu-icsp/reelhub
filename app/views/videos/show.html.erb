@@ -1,12 +1,12 @@
 <h1> Show Videos </h1>
 
 <%= link_to 'Edit Video', edit_video_path %>
-<%= link_to 'Delete Video', video_path, method: :delete, data: { confirm: 'Are you sure? This will permanently delete this video!' } %>
+<%= link_to 'Delete Video', video_path, method: :delete, data: { confirm: 'Are you sure? This action cannot be undone!' } %>
 
-<p>
-	<%= @video.title %>
-	<br>
-	<%= @video.description %>
-	<br>
-	<%= @video.rank %>
-</p>
+<div>
+	<p> <%= @video.title %> </p>
+	<p> <%= @video.description %> </p>
+	<p> Rank: <%= @video.rank %> </p>
+	<p> View Count: <%= @video.view_count %> </p>
+	<p> Uploaded <%= time_ago_in_words @video.created_at %> ago </p>
+</div>

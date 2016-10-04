@@ -5,8 +5,11 @@
 <% @video.each do |video| %>
 	<%= link_to video do %>
 		<p> <%= video.title %> </p>
-		<p> <%= video.description %> </p>
-		<p> <%= video.rank %> </p>
-		<br>
+		<p> Rank: <%= video.rank %> </p>
+		<p> <%= truncate video.description, length: 50 %> </p>
+		<p> View Count: <%= video.view_count %> </p>
+		<p> Uploaded <%= time_ago_in_words video.created_at %> ago </p>
+
+		<br><br>
 	<% end %>
 <% end %>

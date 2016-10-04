@@ -5,7 +5,8 @@
 <% @feed.each do |feed| %>
 	<%= link_to feed do %>
 		<p> <%= feed.title %> </p>
-		<p> <%= feed.body %> </p>
+		<p> <%= truncate feed.body, length: 240 %> </p>
+		<p> Posted <%= time_ago_in_words feed.created_at %> ago </p>
 		<br>
 	<% end %>
 <% end %>
