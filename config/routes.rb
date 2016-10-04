@@ -1,8 +1,8 @@
 Rails.application.routes.draw do  
 
   # General:
-  resources :videos
   resources :feeds
+  resources :videos
 
   # Custom:
   root 'pages#home'

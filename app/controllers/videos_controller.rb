@@ -44,7 +44,7 @@ class VideosController < ApplicationController
   private 
 
   def video_params
-  	params.require(:video).permit(:title, :description, :rank, :view_count, :view_size, :view_dimensions, :thumbnail_path)
+  	params.require(:video).permit(:title, :description, :rank, :view_count, :video_size, :video_dimensions, :thumbnail_path)
   end
 
   def find_video

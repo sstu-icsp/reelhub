@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
-	validates :title, presence: true, length: { in: 0..80 }
-	validates :description, length: { maximum: 340 }
+	# validates :title, presence: true, length: { in: 0..80 }
+	# validates :description, length: { maximum: 340 }
 
 	# Later (when added video uploading):
 

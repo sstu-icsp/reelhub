@@ -44,7 +44,7 @@ class FeedsController < ApplicationController
   private 
 
   def feed_params
-  	params.require(:feed).permit(:title, :body)
+  	params.require(:feed).permit(:title, :body, :video_path, :rank)
   end
 
   def find_feed
