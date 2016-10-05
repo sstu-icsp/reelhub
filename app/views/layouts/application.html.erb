@@ -8,9 +8,11 @@
 </head>
 <body>
 
-<%= link_to root_path do %>
-	<%= image_tag 'logo.svg' %>
-<% end %>
+<div class="logo-wrapper">
+	<%= link_to root_path, id: 'logo' do %>
+		<%= image_tag 'logo.svg' %>
+	<% end %>
+</div>
 
 <% if user_signed_in? %>
 	<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
