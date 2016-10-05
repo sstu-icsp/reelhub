@@ -48,6 +48,9 @@ group :development do
   gem 'spring'
 end
 
+# Use Bootstrap
+gem 'bootstrap-sass'
+
 group :development do 
 	gem 'sqlite3'
 end
