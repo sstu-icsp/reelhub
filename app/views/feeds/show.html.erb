@@ -8,3 +8,7 @@
 	<p> <%= @feed.body %> </p>
 	<p> Posted <%= time_ago_in_words @feed.created_at %> ago </p>
 </div>
+
+<div class="comments">
+	<%= render 'disqus' %>
+</div>
