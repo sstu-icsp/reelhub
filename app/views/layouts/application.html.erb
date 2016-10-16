@@ -8,6 +8,30 @@
 </head>
 <body>
 
+<div class="logo-wrapper">
+	<%= link_to root_path, id: 'logo' do %>
+		<%= image_tag 'logo.svg' %>
+	<% end %>
+</div>
+
+<% if user_signed_in? %>
+	<%= link_to 'My Profile', current_user %>
+	<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+	<% else %>
+	<%= link_to 'Log In', new_user_session_path %>
+	<%= link_to 'Sign Up', new_user_registration_path %>
+<% end %>
+
+<% if notice %>
+	<p class="notice"> 
+		<%= notice %> 
+	</p>
+<% elsif alert %>
+	<p class="alert">
+		<%= alert %>
+	</p>
+<% end %>
+
 <%= yield %>
 
 </body>

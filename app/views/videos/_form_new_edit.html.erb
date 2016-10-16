@@ -1,0 +1,32 @@
+<%= form_for @video do |v| %>
+	<%= v.label :title %>
+	<br>
+	<%= v.text_field :title %>
+	<br>
+	<%= v.label :description %>
+	<br>
+	<%= v.text_field :description %>
+	<br>
+	<%= v.label :rank %>
+	<br>
+	<%= v.text_field :rank %>
+	<br>
+	<%= v.label :view_count %>
+	<br>
+	<%= v.text_field :view_count %>
+	<br>
+	<%= v.label :video_size %>
+	<br>
+	<%= v.text_field :video_size %>
+	<br>
+	<%= v.label :video_dimensions %>
+	<br>
+	<%= v.text_field :video_dimensions %>
+	<br>
+	<%= v.label :thumbnail_path %>
+	<br>
+	<%= v.text_field :thumbnail_path %>
+	<br>
+	
+	<%= v.submit %>
+<% end %>

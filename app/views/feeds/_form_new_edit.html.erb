@@ -1,0 +1,19 @@
+<%= form_for @feed, html: { multiparts: true } do |f| %>
+	<%= f.label :title %>
+	<br>
+	<%= f.text_field :title %>
+	<br>
+	<%= f.label :body %>
+	<br>
+	<%= f.text_field :body %>
+	<br>
+	<%= f.label :video_path %>
+	<br>
+	<%= f.text_field :video_path %>
+	<br>
+	<%= f.label :rank %>
+	<br>
+	<%= f.text_field :rank %>
+	<br>
+	<%= f.submit %>
+<% end %>

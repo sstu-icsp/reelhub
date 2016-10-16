@@ -1,0 +1,8 @@
+<h1>artists#index</h1>
+
+<% @artist.each do |artist| %>
+	<%= link_to artist do %>
+		<%= artist.email %>
+	<% end %>
+	<br>
+<% end %>
