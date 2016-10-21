@@ -1,12 +1,11 @@
 <h1> Feeds#index </h1>
 
-<%= link_to 'New Post', new_feed_path %>
+
+<%= link_to 'New Post', new_user_feed_path(@user) %>
 
 <% @feed.each do |feed| %>
-	<%= link_to feed do %>
-		<p> <%= feed.title %> </p>
-		<p> <%= truncate feed.body, length: 240 %> </p>
-		<p> Posted <%= time_ago_in_words feed.created_at %> ago </p>
-		<br>
-	<% end %>
+	<p> <%= feed.title %> </p>
+	<p> <%= truncate feed.body, length: 240 %> </p>
+	<p> Posted <%= time_ago_in_words feed.created_at %> ago </p>
+	<br>
 <% end %>

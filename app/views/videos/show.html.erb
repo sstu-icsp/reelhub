@@ -10,7 +10,3 @@
 	<p> View Count: <%= @video.view_count %> </p>
 	<p> Uploaded <%= time_ago_in_words @video.created_at %> ago </p>
 </div>
-
-<div class="comments">
-	<%= render 'disqus' %>
-</div>

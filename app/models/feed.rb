@@ -6,4 +6,6 @@ class Feed < ActiveRecord::Base
 	
 	# validates :video_path, presence: true
 	# validates :rank, presence: true
+
+	belongs_to :user
 end

@@ -1,27 +1,30 @@
 class FeedsController < ApplicationController
-  before_action :find_feed, only: [:show, :edit, :destroy, :update]
+  #  before_action :find_feed, only: [:show, :edit, :destroy, :update]
   before_action :authenticate_user!, except: [:index, :show]
 
+  before_action :find_user
+  before_action :find_feed, only: [:show]
+
   def index
-  	@feed = Feed.all.order('created_at DESC')
+  	@feed = @user.feeds.all.order('created_at DESC')
   end
 
   def new 
-  	@feed = Feed.new
+  	@feed = @user.feeds.new
   end
 
   def create
-  	@feed = Feed.new(feed_params)
+  	@feed = @user.feeds.new(feed_params)
 
   	if @feed.save 
-  		redirect_to @feed
+  		redirect_to user_feeds_path
   	else
   		render 'new'
   	end
   end
 
   def show
-    #
+    @feed = Feed.where(user_id: @user).order('created_at DESC')
   end
 
   def edit
@@ -48,6 +51,14 @@ class FeedsController < ApplicationController
   end
 
   def find_feed
-  	@feed = Feed.find(params[:id])
+    @feed = Feed.where(user_id: @user).order('created_at DESC')
   end
+
+  def find_user
+    @user = User.find(params[:user_id])
+  end
+
+  # def find_feed
+  #   @user = User.find(params[:user_id])
+  # end
 end

@@ -1,16 +1,30 @@
 Rails.application.routes.draw do  
 
   # General:
-  resources :feeds
+  resources :users do
+    resources :feeds
+  end
+
+  resources :users do 
+    resources :artists
+  end
+
   resources :videos
-  resources :artists
+
+  # resources :artists do 
+  #   resources :feeds
+  # end
+
+  get 'artists/:id' => 'artists#show'
+  get 'artists/' => 'artists#index'
+  get 'users/' => 'artists#index'
+  get 'users/:id' => 'artists#show'
 
   # Custom:
   root 'pages#home'
   get '/home' => 'pages#home'
   get '/about' => 'pages#about'
   get '/support' => 'pages#support'
-  get '/artists/:id' => 'artists#show', :as => :user
   # get '*path' => redirect('/') # Messes up Devise's redirection to Log In / Sign Up
 
   # Devise:
