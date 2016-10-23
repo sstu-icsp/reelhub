@@ -2,7 +2,13 @@
 
 <h2> Welcome to ReelHub </h2>
 <ul>
-	<li> <%= link_to 'Feeds Page', root_path %> </li>  <!-- DOESN'T WORK (should be user_feeds_path or something like this)-->
+	<li> 
+		<% if user_signed_in? %>
+				<%= link_to 'Feeds Page', user_feeds_path(current_user.id) %>
+			<% else %>
+				<%= link_to 'Feeds Page (Log In to use)', root_path %>
+		<% end %>
+	</li>
 	<li> <%= link_to 'Videos Page', videos_path %> </li>
 	<li> <%= link_to 'Artists Page', artists_path %> </li>
 	<li><%= link_to 'About Page', about_path %></li>
