@@ -5,10 +5,6 @@ Rails.application.routes.draw do
     resources :feeds
   end
 
-  resources :users do 
-    resources :artists
-  end
-
   resources :videos
 
   # resources :artists do 
