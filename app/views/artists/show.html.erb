@@ -2,3 +2,7 @@
 
 <%= @artist.email %>
 <%= @artist.created_at %>
+
+<br>
+
+<%= link_to "Click to read #{@artist.email}'s feed", user_feeds_path(@artist) %>

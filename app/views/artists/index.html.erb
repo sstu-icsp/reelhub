@@ -3,6 +3,7 @@
 <% @artist.each do |artist| %>
 	<%= link_to artist do %>
 		<%= artist.email %>
+		<%= artist.created_at %>
 	<% end %>
 	<br>
 <% end %>

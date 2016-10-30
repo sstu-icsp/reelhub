@@ -1,14 +1,12 @@
 <h1> Show Feed </h1>
 
-<%= link_to 'Edit Feed', edit_feed_path %>
-<%= link_to 'Delete Feed', feed_path, method: :delete, data: { confirm: 'Are you sure? This action cannot be undone!' } %>
+<% if current_user.id == @feed.user_id %>
+	<%= link_to 'Delete Feed', user_feed_path, method: :delete, data: {confirm: "Are you sure? This will permanently delete this feed. "} %>
+	<%= link_to 'Edit Feed', edit_user_feed_path %>
+<% end %>
 
 <div>
-	<p> <%= @feed.title %> </p>
-	<p> <%= @feed.body %> </p>
-	<p> Posted <%= time_ago_in_words @feed.created_at %> ago </p>
-</div>
-
-<div class="comments">
-	<%= render 'disqus' %>
+	<%= @feed.title %>
+	<%= @feed.created_at %>
+	<%= @feed.updated_at %>
 </div>
