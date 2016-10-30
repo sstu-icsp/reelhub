@@ -1,9 +1,10 @@
 <h1> Show Feed </h1>
 
+<%= link_to 'Delete Feed', user_feed_path, method: :delete, data: {confirm: "Are you sure? This will permanently delete this feed. "} %>
+<%= link_to 'Edit Feed', edit_user_feed_path %>
+
 <div>
-	<% @feed.each do |feed| %>
-		<%= feed.title %>
-		<%= feed.created_at %>
-		<%= feed.updated_at %>
-	<% end %>
+	<%= @feed.title %>
+	<%= @feed.created_at %>
+	<%= @feed.updated_at %>
 </div>

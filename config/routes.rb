@@ -1,4 +1,5 @@
 Rails.application.routes.draw do 
+  # Do not change the order of any routes
 
   # Root
   root 'pages#home'
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   # Resources:
-  resources :users do  # Don't place this above Devise's routes
+  resources :users do
     resources :feeds
   end
 
@@ -25,5 +26,4 @@ Rails.application.routes.draw do
   get '/home' => 'pages#home'
   get '/about' => 'pages#about'
   get '/support' => 'pages#support'
-
 end

@@ -1,9 +1,7 @@
 class FeedsController < ApplicationController
-  #  before_action :find_feed, only: [:show, :edit, :destroy, :update]
   before_action :authenticate_user!, except: [:index, :show]
-
   before_action :find_user
-  before_action :find_feed, only: [:show]
+  before_action :find_feed, only: [:show, :edit, :update, :destroy]
 
   def index
   	@feed = @user.feeds.all.order('created_at DESC')
@@ -24,7 +22,7 @@ class FeedsController < ApplicationController
   end
 
   def show
-    @feed = Feed.where(user_id: @user).order('created_at DESC')
+    #
   end
 
   def edit
@@ -33,7 +31,7 @@ class FeedsController < ApplicationController
 
   def update
   	if @feed.update(feed_params)
-      redirect_to @feed
+      redirect_to :action => :show, status: 303
     else
       render 'edit'
     end
@@ -50,15 +48,11 @@ class FeedsController < ApplicationController
   	params.require(:feed).permit(:title, :body, :video_path, :rank)
   end
 
-  def find_feed
-    @feed = Feed.where(user_id: @user).order('created_at DESC')
-  end
-
   def find_user
     @user = User.find(params[:user_id])
   end
 
-  # def find_feed
-  #   @user = User.find(params[:user_id])
-  # end
+  def find_feed
+    @feed = Feed.find(params[:id])
+  end
 end
