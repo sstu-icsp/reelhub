@@ -3,4 +3,6 @@
 <%= @artist.email %>
 <%= @artist.created_at %>
 
-<%= link_to 'New Feed Post', new_user_feed_path(@artist) %>
+<br>
+
+<%= link_to "Click to read #{@artist.email}'s feed", user_feeds_path(@artist) %>
