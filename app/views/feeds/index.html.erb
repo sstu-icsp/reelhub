@@ -1,7 +1,9 @@
 <h1> Feeds#index </h1>
 
-<% if current_user.id == @user.id %>
-	<%= link_to 'New Post', new_user_feed_path(@user) %>
+<% if user_signed_in? %>
+	<% if current_user.id == @user.id %>
+		<%= link_to 'New Post', new_user_feed_path(@user) %>
+	<% end %>
 <% end %>
 
 <% @feed.each do |feed| %>

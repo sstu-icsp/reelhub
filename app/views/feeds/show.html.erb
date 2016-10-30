@@ -1,8 +1,10 @@
 <h1> Show Feed </h1>
 
-<% if current_user.id == @feed.user_id %>
-	<%= link_to 'Delete Feed', user_feed_path, method: :delete, data: {confirm: "Are you sure? This will permanently delete this feed. "} %>
-	<%= link_to 'Edit Feed', edit_user_feed_path %>
+<% if user_signed_in? %>
+	<% if current_user.id == @feed.user_id %>
+		<%= link_to 'Delete Feed', user_feed_path, method: :delete, data: {confirm: "Are you sure? This will permanently delete this feed. "} %>
+		<%= link_to 'Edit Feed', edit_user_feed_path %>
+	<% end %>
 <% end %>
 
 <div>
