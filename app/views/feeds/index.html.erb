@@ -1,6 +1,8 @@
 <h1> Feeds#index </h1>
 
-<%= link_to 'New Post', new_user_feed_path(@user) %>
+<% if current_user.id == @user.id %>
+	<%= link_to 'New Post', new_user_feed_path(@user) %>
+<% end %>
 
 <% @feed.each do |feed| %>
 	<%= link_to user_feed_path(@user, feed) do %>
