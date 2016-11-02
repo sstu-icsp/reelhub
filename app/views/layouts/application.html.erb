@@ -17,8 +17,8 @@
 <% if user_signed_in? %>
 	<%= link_to 'My Profile | ', current_user %>
 	<%= link_to 'Sign Out | ', destroy_user_session_path, :method => :delete %>
-	<%= link_to 'New Post', new_user_feed_path(current_user) %>
-	<%# link_to 'Upload Video', new_user_video_path(current_user) %>
+	<%= link_to 'New Post | ', new_user_feed_path(current_user) %>
+	<%= link_to 'Upload Video', new_user_video_path(current_user) %>
 	<% else %>
 	<%= link_to 'Log In | ', new_user_session_path %>
 	<%= link_to 'Sign Up', new_user_registration_path %>

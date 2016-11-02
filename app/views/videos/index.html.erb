@@ -1,9 +1,9 @@
 <h1> Videos#index </h1>
 
-<%= link_to 'New Video', new_video_path %>
+<%= link_to 'New Video', new_user_video_path %>
 
 <% @video.each do |video| %>
-	<%= link_to video do %>
+	<%= link_to user_video_path(@user, video) do %>
 		<p> <%= video.title %> </p>
 		<p> Rank: <%= video.rank %> </p>
 		<p> <%= truncate video.description, length: 50 %> </p>

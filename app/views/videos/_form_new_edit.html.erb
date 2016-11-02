@@ -1,4 +1,4 @@
-<%= form_for @video do |v| %>
+<%= form_for ([@user, @video]), html: { multiparts: true } do |v| %>
 	<%= v.label :title %>
 	<br>
 	<%= v.text_field :title %>
