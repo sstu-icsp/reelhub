@@ -1,7 +1,11 @@
-<h1> Show Videos </h1>
+<h1> videos#show </h1>
 
-<%= link_to 'Edit Video', edit_user_video_path %>
-<%= link_to 'Delete Video', user_video_path, method: :delete, data: { confirm: 'Are you sure? This action cannot be undone!' } %>
+<% if user_signed_in? %>
+	<% if current_user.id == @video.user_id %>
+		<%= link_to 'Delete Video', user_video_path, method: :delete, data: { confirm: 'Are you sure? This action cannot be undone!' } %>
+		<%= link_to 'Edit Video', edit_user_video_path %>
+	<% end %>
+<% end %>
 
 <div>
 	<p> <%= @video.title %> </p>

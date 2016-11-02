@@ -1,6 +1,10 @@
-<h1> Videos#index </h1>
+<h1> videos#index </h1>
 
-<%= link_to 'New Video', new_user_video_path %>
+<% if user_signed_in? %>
+	<% if current_user.id == @user.id %>
+		<%= link_to 'New Video', new_user_video_path(@video) %>
+	<% end %>
+<% end %>
 
 <% @video.each do |video| %>
 	<%= link_to user_video_path(@user, video) do %>
