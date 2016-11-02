@@ -17,9 +17,9 @@ Rails.application.routes.draw do
   # Resources:
   resources :users do
     resources :feeds
+    resources :videos
   end
 
-  resources :videos
   resources :artists
 
   # Custom (pages):

@@ -9,4 +9,6 @@ class Video < ActiveRecord::Base
 	# validates :video_size, presence: true
 	# validates :video_dimensions, presence: true
 	# validates :thumbnail_path, presence: true
+
+	belongs_to :user
 end
