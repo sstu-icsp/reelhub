@@ -1,4 +1,4 @@
 # ReelHub
-### https://reelhub.herokuapp.com
+### Check out the [Test Version](https://reelhub.herokuapp.com)
 
-Web application that allows artists to share and store their work.
+Rails application that allows artists to share and store their work.
