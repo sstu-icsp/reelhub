@@ -1,7 +1,6 @@
 # ReelHub
-### Check out the [Test Version](https://reelhub.herokuapp.com)
-
-Rails application that allows artists to share and store their work.
+### Rails application that allows artists to share and store their work.
+Check out the [Test Version](https://reelhub.herokuapp.com)
 
 To do (not complete): 
 * Amazon S3 Storage for Paperclip
