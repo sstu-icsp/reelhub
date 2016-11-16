@@ -34,6 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'tzinfo-data', '~> 1.2016', '>= 1.2016.7'
 # Use Devise for multiple user functionality
 gem 'devise'
+# Use Paperclip for image upload
+gem 'paperclip', '~> 5.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
