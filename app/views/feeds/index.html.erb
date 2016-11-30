@@ -9,6 +9,7 @@
 <% @feed.each do |feed| %>
 	<%= link_to user_feed_path(@user, feed) do %>
 		<p> <%= feed.title %> </p>
+		<%= image_tag feed.image.url(:medium) %>
 		<p> <%= truncate feed.body, length: 240 %> </p>
 		<p> Posted <%= time_ago_in_words feed.created_at %> ago </p>
 		<br>
