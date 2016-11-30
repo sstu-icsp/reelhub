@@ -10,7 +10,7 @@
 <div>
 	<p> <%= @video.title %> </p>
 	<br>
-	<%= video_tag @video.video.url(:medium) %>
+	<%= video_tag @video.video.url(:medium), controls: true, type: "video/mp4", size: "640x360" %>
 	<br>
 	<p> <%= @video.description %> </p>
 	<p> Rank: <%= @video.rank %> </p>

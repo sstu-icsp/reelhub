@@ -13,8 +13,8 @@ class Video < ActiveRecord::Base
 	belongs_to :user
 
 	has_attached_file :video, :styles => {
-	    :medium => { :geometry => "640x360", :format => 'flv' },
-	    :thumb => { :geometry => "100x100#", :format => 'jpg', :time => 3 }
+	    :medium => { :geometry => "640x360", :format => 'mp4' }, 
+	    :thumb => { :geometry => "100x100#", :format => 'jpg', :time => 1 }
   	}, :processors => [:transcoder]
 
   	validates_attachment_content_type :video, :content_type => /\Avideo\/.*\Z/
