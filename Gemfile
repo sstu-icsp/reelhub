@@ -38,6 +38,8 @@ gem 'devise'
 gem 'paperclip', '~> 5.1'
 # Use Paperclip AV Transcoder for video upload
 gem 'paperclip-av-transcoder'
+# Use Paperclip FFmpeg for video upload (not sure if needed)
+gem 'paperclip-ffmpeg'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
