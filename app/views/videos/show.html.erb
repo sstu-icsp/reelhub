@@ -9,6 +9,9 @@
 
 <div>
 	<p> <%= @video.title %> </p>
+	<br>
+	<%= video_tag @video.video.url(:medium) %>
+	<br>
 	<p> <%= @video.description %> </p>
 	<p> Rank: <%= @video.rank %> </p>
 	<p> View Count: <%= @video.view_count %> </p>
