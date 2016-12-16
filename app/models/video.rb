@@ -19,7 +19,7 @@ class Video < ActiveRecord::Base
 
   	validates_attachment_content_type :video, :content_type => /\Avideo\/.*\Z/
   	# validates_attachment_content_type :video, content_type: /\Avideo/
-	# validates_attachment_content_type :mp4_file, content_type: /.*/
+	# validates_attachment_content_type :video, content_type: /.*/
 	# validates_attachment_content_type :webm_file, content_type: /.*/
 	# validates_attachment_content_type :ogg_file, content_type: /.*/
 end

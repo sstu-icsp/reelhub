@@ -16,7 +16,10 @@ Rails.application.routes.draw do
 
   # Resources:
   resources :users do
-    resources :feeds
+    resources :feeds do 
+      resources :comments
+    end
+    
     resources :videos
   end
 

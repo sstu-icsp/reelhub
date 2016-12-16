@@ -8,6 +8,7 @@ class Feed < ActiveRecord::Base
 	# validates :rank, presence: true
 
 	belongs_to :user
+	has_many :comments
 
 	has_attached_file :image, :styles => {:large => "1920x1200#", :medium => "960x600#", :small => "400x250#"}, :default_url => "/images/:style/missing.png"
 	
