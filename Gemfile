@@ -40,6 +40,8 @@ gem 'paperclip', '~> 5.1'
 gem 'paperclip-av-transcoder'
 # Use Paperclip FFmpeg for video upload (not sure if needed)
 gem 'paperclip-ffmpeg'
+# AWS Storage
+gem 'aws-sdk'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
