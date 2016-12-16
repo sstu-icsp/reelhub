@@ -1,0 +1,9 @@
+<%# link_to comment.name, person_path %>
+
+<%= comment.body %>
+<%= time_ago_in_words(comment.created_at) %> ago.
+
+<!-- Terrible. Don't do this. -->
+<%# if user_signed_in? and current_user.email == 'constshatalov@gmail.com' %>
+	<%# link_to 'Delete', [comment.post, comment], method: :delete, class: "button", data: {confirm: 'Are you sure?'} %>	
+<%# end %>
