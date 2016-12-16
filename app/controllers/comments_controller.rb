@@ -1,58 +1,46 @@
 class CommentsController < ApplicationController
-  # before_action :authenticate_user!, except: [:index, :show]
-  # before_action :find_user
-  # before_action :find_feed, only: [:show, :edit, :update, :destroy]
+  def create
+    @feed = Feed.find(params[:feed_id])
+    @comment = @feed.comments.create(params[:comment].permit(:name, :email, :body))
+    @user = current_user
 
-  # def index
-  # 	@feed = @user.feeds.all.order('created_at DESC')
-  # end
+    redirect_to user_feed_path(@user.id)
+  end
 
-  # def new 
-  # 	@feed = @user.feeds.new
-  # end
+  def destroy
+    @feed = Feed.find(params[:feed_id])
+    @comment = @feed.comments.find(params[:id])
+    @comment.destroy
+    @user = current_user
 
-  # def create
-  # 	@feed = @user.feeds.new(feed_params)
-
-  # 	if @feed.save 
-  # 		redirect_to user_feeds_path
-  # 	else
-  # 		render 'new'
-  # 	end
-  # end
-
-  # def show
-  #   #
-  # end
-
-  # def edit
-  #   #
-  # end
-
-  # def update
-  # 	if @feed.update(feed_params)
-  #     redirect_to :action => :show, status: 303
-  #   else
-  #     render 'edit'
-  #   end
-  # end
-
-  # def destroy
-  #   @feed.destroy
-  #   redirect_to :action => :index, status: 303
-  # end
-
-  # private 
-
-  # def feed_params
-  # 	params.require(:feed).permit(:title, :body, :video_path, :rank, :image)
-  # end
-
-  # def find_user
-  #   @user = User.find(params[:user_id])
-  # end
-
-  # def find_feed
-  #   @feed = Feed.find(params[:id])
-  # end
+    redirect_to user_feed_path(@user.id)
+  end
 end
+ 
+# Help:
+
+# class CommentsController < ApplicationController
+#   def create
+#     @post = Post.find(params[:post_id])
+#     @comment =  @post.comments.create(params[:comment].permit(:name, :body))
+
+#     if user_signed_in?
+#       @userEmail = current_user.email
+
+#       @choppedEmail = @userEmail.slice(0...(@userEmail.index('@')))
+#       @comment.update_attribute(:name, @choppedEmail)
+
+#       # @comment.update_attribute(:name, @userEmail)
+#     end
+
+#     redirect_to post_path(@post)
+#   end
+
+#   def destroy
+#     @post = Post.find(params[:post_id])
+#     @comment = @post.comments.find(params[:id])
+#     @comment.destroy
+
+#     redirect_to post_path(@post)
+#   end
+# end

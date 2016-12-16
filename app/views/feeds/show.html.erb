@@ -16,3 +16,8 @@
 	<%= @feed.created_at %>
 	<%= @feed.updated_at %>
 </div>
+
+<div class="comments">
+	<%= render @feed.comments %>
+	<%= render "comments/form" %>
+</div>
