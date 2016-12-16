@@ -36,6 +36,12 @@ gem 'tzinfo-data', '~> 1.2016', '>= 1.2016.7'
 gem 'devise'
 # Use Paperclip for image upload
 gem 'paperclip', '~> 5.1'
+# Use Paperclip AV Transcoder for video upload
+gem 'paperclip-av-transcoder'
+# Use Paperclip FFmpeg for video upload (not sure if needed)
+gem 'paperclip-ffmpeg'
+# AWS Storage
+gem 'aws-sdk'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

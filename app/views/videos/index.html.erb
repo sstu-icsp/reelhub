@@ -9,6 +9,9 @@
 <% @video.each do |video| %>
 	<%= link_to user_video_path(@user, video) do %>
 		<p> <%= video.title %> </p>
+		<br>
+		<%= image_tag video.video.url(:thumb) %>
+		<br>
 		<p> Rank: <%= video.rank %> </p>
 		<p> <%= truncate video.description, length: 50 %> </p>
 		<p> View Count: <%= video.view_count %> </p>

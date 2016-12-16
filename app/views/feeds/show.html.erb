@@ -8,7 +8,11 @@
 <% end %>
 
 <div>
-	<%= @feed.title %>
+	<%= @feed.title %> 
+	<br>
+	<%= image_tag @feed.image.url(:medium) %>
+	<br>
+	<%= @feed.body %>
 	<%= @feed.created_at %>
 	<%= @feed.updated_at %>
 </div>
